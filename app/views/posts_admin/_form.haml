@@ -1,0 +1,24 @@
+= form_for @post, url: posts_admin_path do |f|
+  - if @post.errors.any?
+    .error_explanation
+      %h2
+        = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li
+            = msg
+
+  %input#postId{:type => "hidden", :value => "<%= @post.id"}
+
+  .form-group
+    = f.input :title, input_html: { class: 'form-control'}
+  
+  .form-group
+    = f.input :body, input_html: { class: 'summernote'}
+  
+  .actions
+    = f.submit class: 'btn btn-default'
+    = link_to 'Show', @post, class: 'btn btn-default' if @post.persisted?
+    = link_to 'Back', posts_path, class: 'btn btn-default'
+    = link_to 'Delete', @post, method: :delete, data: { confirm: 'Hello Savannah, are you sure?' }, class: 'btn btn-danger'
+

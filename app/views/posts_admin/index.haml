@@ -1,0 +1,29 @@
+%div.postsAdmin
+  %h3 Blog Post Publish Page
+  %h5 Welcome back Savannah
+  = link_to "New Post", new_posts_admin_path, class: 'btn newPostBtn'
+  %h5 Manage previous posts
+  %table
+    %tr
+      %td TITLE
+      %td CREATED DATE
+      %td PREVIEW
+      %td
+      %td
+      %td
+      %td CURRENT STATE
+
+    - @posts.each do |post| 
+      %tr
+        %td= link_to post.title, post_path(post)
+        %td= post.created_at.strftime('%b %d, %Y')
+        %td
+          -if post.body
+            = sanitize(post.body, :tags=>[]).truncate(25, :separator => " ")
+        %td
+          = link_to 'Publish', publish_posts_admin_path(post), class: 'btn publishBtn'
+        %td
+          = link_to 'Unpublish', unpublish_posts_admin_path(post), class: 'btn unpublishBtn'
+        %td
+          = button_to 'Delete', posts_admin_path(post), method: :delete, data: { confirm: 'Delete post, are you sure?' }, class: 'btn destroyBtn'
+        %td= post.published.titleize
