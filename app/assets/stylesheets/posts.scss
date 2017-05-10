@@ -1,3 +1,15 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+  color: #FFFFFF;
+}
+
+.jumbotron {
+  background: #964893; /* Old browsers */
+  background: -moz-linear-gradient(top,  #964893 0%, #6d3465 50%, #964893 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #964893 0%,#6d3465 50%,#964893 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #964893 0%,#6d3465 50%,#964893 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#964893', endColorstr='#964893',GradientType=0 ); /* IE6-9 */
+}

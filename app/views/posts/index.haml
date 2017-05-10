@@ -1,1 +1,21 @@
-%h1 Rails Blog with Admin
+.container
+  .header
+    .jumbotron
+      %h1 Rails Blog with Admin
+      %p Styled with Bootstrap
+
+  .row
+    = link_to 'Post Administration', posts_admin_index_path, class: 'btn btn-default pull-right'
+
+  .row
+    .col-md-2
+      %ul
+        %li Post Title
+        %li Post Title2
+        %li Post Title3
+    .col-md-10  
+      .panel.panel-default
+        .panel-heading
+          %h1 Post Title
+        .panel-body
+          %p Post Body
