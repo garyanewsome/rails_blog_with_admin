@@ -1,21 +1,25 @@
-.container
-  .header
+.posts.container
+  .post__header
     .jumbotron
       %h1 Rails Blog with Admin
       %p Styled with Bootstrap
+      %p.pull-right ... and I was in a purple kind of mood.
 
-  .row
-    = link_to 'Post Administration', posts_admin_index_path, class: 'btn btn-default pull-right'
+  .row.posts__button-row
+    = link_to 'Post Administration', posts_admin_index_path, class: 'btn btn-purple'
+    = link_to "New Post", new_posts_admin_path, class: 'btn btn-purple'
 
   .row
     .col-md-2
-      %ul
-        %li Post Title
-        %li Post Title2
-        %li Post Title3
+      - if @posts
+        - @posts.each do |post|
+          %p= post.title
+      - else
+        %p No posts yet. :(
+    
     .col-md-10  
-      .panel.panel-default
+      .panel.posts__panel
         .panel-heading
-          %h1 Post Title
+          %h1= @posts.first.title 
         .panel-body
-          %p Post Body
+          %p= raw @posts.first.body

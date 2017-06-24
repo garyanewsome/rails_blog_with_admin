@@ -1,0 +1,19 @@
+// Universal Base Styles
+
+body {
+  background-color: $light-text;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-dark;
+}
+
+.btn-purple {
+  border: 1px solid $color-dark;
+  color: $color-dark;
+}
+
+.btn-purple:hover {
+  // border: 1px solid $color-dark;
+  color: $color;
+}

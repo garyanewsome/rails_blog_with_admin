@@ -1,7 +1,7 @@
-.col-sm-11.col-xs-12.blog-content.container
+.blog-content.container
   .row.blog
-    -if current_user
-      = link_to "Edit", edit_posts_admin_path(@post), id: "edit", class: 'adminBtn btn'
+    -# -if current_user
+    = link_to "Edit", edit_posts_admin_path(@post), id: "edit", class: 'adminBtn btn'
   %h2.text-center= @post.title
   %h5.text-center= @post.created_at.strftime('%b %d, %Y')
   %div= raw @post.body

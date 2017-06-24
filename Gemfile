@@ -37,8 +37,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml'
 gem "haml-rails"
 
-gem 'summernote-rails', '0.8.1.1'
-gem 'bootstrap-sass', '~> 3.3'
+gem 'summernote-rails'
+gem 'simple_form'
+gem 'bootstrap-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
